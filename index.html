@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue Testing</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <h1>Hello Vue</h1>
+    <div class="" id="app">
+
+        <div class="" v-if="showBook">
+            <p>Anime Title - {{title}}</p>
+            <p>Studio - {{studio}}</p>
+            <p>Genre - {{genre}}</p>
+            <p>Age - {{age}}</p>
+        </div>
+
+        <button type="button" @click="showBook=!showBook">
+            <span v-if="!showBook">Show</span>
+            <span v-if="showBook">Hide</span>
+        </button>
+        <button type="button" v-on:click="age++">increase</button>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
