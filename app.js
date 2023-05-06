@@ -11,7 +11,16 @@ const app = Vue.createApp({
     methods: {
         increase(){
             this.age ++
-        }
+        },
+        mouseOverHandler(event,data){
+            console.log("moveover is working",event.type,data);
+        },
+        mouseLeaveHandler(event){
+            console.log("mouse leave is working",event.type);
+        },
+        dblClickHandler(event){
+            console.log("double click is working",event.type);
+        },
     },
 
 });

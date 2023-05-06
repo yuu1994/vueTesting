@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Testing</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Hello Vue</h1>
@@ -23,6 +24,12 @@
             <span v-if="showBook">Hide</span>
         </button>
         <button type="button" v-on:click="age++">increase</button>
+
+        <br>
+
+        <div class="box" @mouseover="mouseOverHandler($event,'data')">Mouse Over</div>
+        <div class="box" @mouseleave="mouseLeaveHandler">Mouse Leave</div>
+        <div class="box" @dblclick="dblClickHandler">Double Click</div>
     </div>
     <script src="app.js"></script>
 </body>
