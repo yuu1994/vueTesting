@@ -31,6 +31,21 @@
         <div class="box" @mouseleave="mouseLeaveHandler">Mouse Leave</div>
         <div class="box" @dblclick="dblClickHandler">Double Click</div>
     </div>
+
+    <div class="" id="app2">
+        <h2>Student Enroll</h2>
+        <div class="" v-if="enroll">
+            <p>Name - {{ name }}</p>
+            <p>Age - {{ age }}</p>
+            <p>Job - {{ job }}</p>
+        </div>
+        <button type="button" @click="enroll=!enroll">
+            <span v-if="enroll">hide Enroll</span>
+            <span v-if="!enroll">show Enroll</span>
+        </button>
+
+    </div>
     <script src="app.js"></script>
+    <script src="app2.js"></script>
 </body>
 </html>
