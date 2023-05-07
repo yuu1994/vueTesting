@@ -26,7 +26,7 @@
     <div class="" id="app">
       <div class="row">
         <div
-          class="card col-3 m-4 shadow"
+          class="card col-3 m-4 shadow border-3 border-dark-subtle"
           style="width: 18rem"
           v-if="showBook"
           v-for="book in filterBooks"
@@ -39,7 +39,7 @@
               <p class="card-text">{{ book.genre }}</p>
               <p class="card-text">{{ book.year }}</p>
               <a :href="book.link" class="text-decoration-none text-danger"
-                >more</a
+                >See more</a
               >
             </div>
           </div>
