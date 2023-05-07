@@ -14,9 +14,11 @@
       crossorigin="anonymous"
     />
     <style>
-        .fav {
-            background-color: rgb(69, 193, 228);
-        }
+      .fav {
+        background-color: red;
+        color: white;
+        box-shadow: 1px 1px 3px black;
+      }
     </style>
   </head>
   <body class="bg-info-subtle">
@@ -24,31 +26,34 @@
     <div class="" id="app">
       <div class="row">
         <div
-          class="card col-3 m-4 border-warning border-2"
-          style="width: 18rem;"
+          class="card col-3 m-4 shadow"
+          style="width: 18rem"
           v-if="showBook"
-          v-for="book in books"
+          v-for="book in filterBooks"
         >
-          <img
-            :src="book.img"
-            class="card-img-top"
-            alt="..."
-            height="200"
-          />
-          <div class="card-body">
-            <h5 :class="{fav:book.isFav}">{{ book.title }}</h5>
-            <p class="card-text">{{ book.studio }}</p>
-            <p class="card-text">{{ book.genre }}</p>
-            <p class="card-text">{{ book.year }}</p>
-            <a :href="book.link" class="text-decoration-none text-danger">more</a>
+          <div class="" @click="clickHandler(book)">
+            <img :src="book.img" class="card-img-top" alt="..." height="200" />
+            <div class="card-body">
+              <h5 :class="{fav:book.isFav}">{{ book.title }}</h5>
+              <p class="card-text">{{ book.studio }}</p>
+              <p class="card-text">{{ book.genre }}</p>
+              <p class="card-text">{{ book.year }}</p>
+              <a :href="book.link" class="text-decoration-none text-danger"
+                >more</a
+              >
+            </div>
           </div>
         </div>
       </div>
 
-      <button type="button" class="btn btn-dark mx-2 mt-5" @click="showBook=!showBook">
-            <span v-if="!showBook">Show</span>
-            <span v-if="showBook">Hide</span>
-        </button>
+      <button
+        type="button"
+        class="btn btn-dark mx-2 mt-5"
+        @click="showBook=!showBook"
+      >
+        <span v-if="!showBook">Show</span>
+        <span v-if="showBook">Hide</span>
+      </button>
       <!-- <button type="button" v-on:click="age++">increase</button> -->
     </div>
 

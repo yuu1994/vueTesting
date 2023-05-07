@@ -18,7 +18,7 @@ const app = Vue.createApp({
                     year : 2020 ,
                     link:"https://en.wikipedia.org/wiki/Mushoku_Tensei",
                     img:"img/mt.jpg",
-                    isFav: false ,
+                    isFav: true ,
                 },
                 {
                     title : "AOT",
@@ -27,7 +27,7 @@ const app = Vue.createApp({
                     year : 2010 ,
                     link:"https://en.wikipedia.org/wiki/Attack_on_Titan",
                     img:"img/aot.jpg",
-                    isFav: false ,
+                    isFav: true ,
                 },
                 {
                     title : "NGNL",
@@ -43,19 +43,18 @@ const app = Vue.createApp({
         }     
     },
             methods: {
-                increase(){
-                    this.age ++
-                },
-                mouseOverHandler(event,data){
-                    console.log("moveover is working",event.type,data);
-                },
-                mouseLeaveHandler(event){
-                    console.log("mouse leave is working",event.type);
-                },
-                dblClickHandler(event){
-                    console.log("double click is working",event.type);
-                },
+                clickHandler(book){
+                    book.isFav = !book.isFav ;
+                }
             },
+
+            computed: {
+                filterBooks(){
+                    return this.books.filter((book)=>{
+                        return book.isFav ;
+                    })
+                }
+            }
 
 });
 
