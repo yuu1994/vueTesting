@@ -1,0 +1,8 @@
+.box {
+    background-color: cornflowerblue;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    color: white;
+}
